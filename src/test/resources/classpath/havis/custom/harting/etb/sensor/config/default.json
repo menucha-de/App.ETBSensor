@@ -1,0 +1,15 @@
+{
+  "conversion" : "(-1000 * 0.0039083 + Math.sqrt((1000 * 0.003908) * (1000 * 0.003908) - 4000 * (-0.0000005775) * (1000 - ((0.0145 + (value * 1.599 / 4095.0) / 74.0) / 0.00002)))) / (2000 * (-0.0000005775))",
+  "unit" : "°C",
+  "ceiling" : {
+    "enable" : true,
+    "value" : 30.0,
+    "notifications" : [ ]
+  },
+  "floor" : {
+    "enable" : true,
+    "value" : -10.0,
+    "notifications" : [ ]
+  },
+  "subscribers" : [ ]
+}

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+set -e
+set -x
+
+env
+
+. /usr/share/mkapp/functions
+
+set_env $ARCH
+
+ant_build
+
+if [ "$PUBLISH" ]; then
+  publish_ivy ivy
+fi
+
+if [ "$RELEASE" ]; then
+  cd target
+  APP=$(ls *.app)
+  APP=${APP%.app}
+  zip ../${APP}.zip ${APP}.app
+  cd -
+  echo "::set-output name=APP::${APP}.zip"
+fi

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:hi="urn:havis:tools:jaxb:interface"
+      xmlns:hc="urn:havis:tools:jaxb:constructor" xmlns:ci="http://jaxb.dev.java.net/plugin/code-injector"
+      xmlns:annox="http://annox.dev.java.net" extensionBindingPrefixes="hi hc ci annox">
+
+      <bindings schemaLocation="ETBv2.xsd">
+            <bindings node="/xs:schema/xs:complexType[@name='Subscriber']">
+                  <class ref="havis.transport.Subscriber"/>
+            </bindings>
+      </bindings>
+</bindings>

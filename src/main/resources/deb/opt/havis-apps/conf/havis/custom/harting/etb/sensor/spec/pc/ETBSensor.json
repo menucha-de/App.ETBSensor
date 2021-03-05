@@ -1,0 +1,98 @@
+{
+  "portCycle": {
+    "spec": {
+      "boundarySpec": {
+        "startTriggerList": null,
+        "repeatPeriod": {
+          "value": 0,
+          "unit": "MS"
+        },
+        "stopTriggerList": null,
+        "duration": null,
+        "noNewEventsInterval": null,
+        "whenDataAvailable": true,
+        "extension": null
+      },
+      "reportSpecs": {
+        "reportSpec": [
+          {
+            "filterSpec": null,
+            "triggerList": {
+              "trigger": [
+                "urn:havis:ale:trigger:http:CeilingOverrun"
+              ]
+            },
+            "opSpecs": {
+              "opSpec": [
+                {
+                  "opType": "WRITE",
+                  "state": true,
+                  "opName": "CeilingOverrun",
+                  "portSpec": {
+                    "id": 1,
+                    "reader": "BuiltIn",
+                    "type": "OUTPUT",
+                    "extension": null
+                  },
+                  "duration": {
+                    "value": 1000,
+                    "unit": "MS"
+                  },
+                  "extension": {}
+                }
+              ]
+            },
+            "statProfileNames": null,
+            "extension": null,
+            "name": "CeilingOverrun",
+            "reportIfEmpty": false
+          },
+          {
+            "filterSpec": null,
+            "triggerList": {
+              "trigger": [
+                "urn:havis:ale:trigger:http:FloorUnderrun"
+              ]
+            },
+            "opSpecs": {
+              "opSpec": [
+                {
+                  "opType": "WRITE",
+                  "state": true,
+                  "opName": "FloorUnderrun",
+                  "portSpec": {
+                    "id": 2,
+                    "reader": "BuiltIn",
+                    "type": "OUTPUT",
+                    "extension": null
+                  },
+                  "duration": {
+                    "value": 1000,
+                    "unit": "MS"
+                  },
+                  "extension": {}
+                }
+              ]
+            },
+            "statProfileNames": null,
+            "extension": null,
+            "name": "FloorUnderrun",
+            "reportIfEmpty": false
+          }
+        ]
+      },
+      "extension": {},
+      "any": [],
+      "schemaVersion": null,
+      "creationDate": null,
+      "includeSpecInReports": false
+    },
+    "extension": null,
+    "any": null,
+    "name": "ETBSensor",
+    "baseExtension": null,
+    "schemaVersion": null,
+    "creationDate": null,
+    "enable": false
+  }
+}

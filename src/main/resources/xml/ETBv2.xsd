@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="urn:havis:custom:harting:etb:sensor:xsd:1"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:havis:custom:harting:etb:sensor:xsd:1"
+	elementFormDefault="qualified">
+
+	<xs:complexType name="HistoryEntry">
+		<xs:sequence>
+			<xs:element name="timestamp" type="xs:long" />
+			<xs:element name="epc" type="xs:string" />
+			<xs:element name="value" type="xs:float" />
+			<xs:element name="unit" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Notification">
+		<xs:complexContent>
+			<xs:extension base="HistoryEntry">
+				<xs:sequence>
+					<xs:element name="type" type="xs:string"/>
+					<xs:element name="limit" type="xs:float"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="Limit">
+		<xs:sequence>
+			<xs:element name="enable" type="xs:boolean" />
+			<xs:element name="value" type="xs:float" />
+			<xs:element name="notifications" type="Subscriber"
+				maxOccurs="unbounded" nillable="false" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Configuration">
+		<xs:sequence>
+			<xs:element name="conversion" type="xs:string" />
+			<xs:element name="unit" type="xs:string" />
+			<xs:element name="ceiling" type="Limit" />
+			<xs:element name="floor" type="Limit" />
+			<xs:element name="subscribers" type="Subscriber"
+				maxOccurs="unbounded" nillable="false" />
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:complexType name="Subscriber">
+    </xs:complexType>
+	
+
+
+
+</xs:schema>

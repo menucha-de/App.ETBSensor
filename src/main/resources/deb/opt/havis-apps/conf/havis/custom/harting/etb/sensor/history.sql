@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS history (
+  id LONG IDENTITY NOT NULL,
+  timestamp LONG NOT NULL,
+  epc TEXT NOT NULL,
+  value FLOAT NOT NULL,
+  unit TEXT,
+  PRIMARY KEY(id)
+);

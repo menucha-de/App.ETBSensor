@@ -1,0 +1,29 @@
+#!/bin/sh
+
+NAME=httpd
+DAEMON=/usr/sbin/httpd
+PID=/run/"$NAME".pid
+ARGS="-f -h /opt/havis.custom.harting.etb/www"
+
+case "$1" in
+        start)
+                echo -n "Starting $NAME: "
+                start-stop-daemon -S -m -p $PID -x $DAEMON -b -- $ARGS
+                ;;
+        stop)
+                echo -n "Stopping $NAME: "
+                start-stop-daemon -K -p $PID
+                ;;
+        restart)
+                echo -n "Stopping $NAME: "
+                start-stop-daemon -K -p $PID
+                sleep 1
+                start-stop-daemon -S -m -p $PID -x $DAEMON -b -- $ARGS
+                ;;
+        *)
+                echo "Usage: $NAME {start|stop|restart}" >&2
+exit 1
+                ;;
+esac
+
+exit 0

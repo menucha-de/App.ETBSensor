@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<project name="havis.custom.harting.etb.sensor" default="publish" xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:if="ant:if">
+
+	<property file="${basedir}/build.properties" />
+
+	<import>
+		<url url="${ivy.url}/ant/default.xml" />
+	</import>
+
+	<property name="build.dir.xml" value="${build.dir}/xml" />
+	<property name="build.dir.xml.classes" value="${build.dir.xml}/classes" />
+	<property name="build.dir.xml.src" value="${build.dir.xml}/src" />
+
+	<target name="clean-cache">
+		<clean-cache />
+	</target>
+
+	<target name="clean-all">
+		<clean-all />
+	</target>
+
+	<target name="compile">
+		<xjc name="ETBv2">
+			<binding dir="${resources.dir}" includes="xml/ETBv2.xml" />
+		</xjc>
+		<compile dst="${build.dir.xml.classes}">
+			<src path="${build.dir.xml.src}" />
+		</compile>
+		<compile dst="${build.dir.classes}">
+			<src path="${src.main.dir}" />
+			<classpath>
+				<pathelement location="${build.dir.xml.classes}" />
+			</classpath>
+		</compile>
+		<copy todir="${build.dir.classes}">
+			<fileset dir="${src.main.dir}" includes="**/*.properties" />
+		</copy>
+		<compile-gwt />
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar-bin />
+	</target>
+
+	<target name="app" depends="jar">
+		<app name="havis.etb-sensor" />
+	</target>
+
+	<target name="test" depends="compile" unless="${skip.test}">
+		<test>
+			<copy file="src/main/resources/deb/opt/havis-apps/conf/havis/custom/harting/etb/sensor/history.sql" todir="${build.dir.test}" />
+		</test>
+	</target>
+
+	<target name="standalone" depends="jar">
+		<standalone>
+			<extract name="havis.middleware.app" />
+		</standalone>
+	</target>
+
+	<target name="publish" depends="app" description="Publishes the JAR to the repository">
+		<publish jar="false" app="false" />
+	</target>
+
+</project>

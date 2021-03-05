@@ -1,0 +1,100 @@
+{
+  "commandCycle": {
+    "spec": {
+      "logicalReaders": {
+        "logicalReader": [
+          "BuiltIn"
+        ]
+      },
+      "boundarySpec": {
+        "startTriggerList": null,
+        "repeatPeriod": {
+          "value": 0,
+          "unit": "MS"
+        },
+        "stopTriggerList": null,
+        "duration": {
+          "value": 1000,
+          "unit": "MS"
+        },
+        "noNewTagsInterval": null,
+        "tagsProcessedCount": null,
+        "afterError": false,
+        "extension": null
+      },
+      "cmdSpecs": {
+        "cmdSpec": [
+          {
+            "filterSpec": {
+              "filterList": {
+                "filter": [
+                  {
+                    "includeExclude": "INCLUDE",
+                    "fieldspec": {
+                      "fieldname": "@2.32.0",
+                      "datatype": "uint",
+                      "format": "hex",
+                      "extension": null
+                    },
+                    "patList": {
+                      "pat": [
+                        "xE280B040"
+                      ]
+                    },
+                    "extension": null
+                  }
+                ]
+              },
+              "extension": null
+            },
+            "opSpecs": {
+              "opSpec": [
+                {
+                  "opType": "CUSTOM",
+                  "fieldspec": null,
+                  "dataSpec": {
+                    "specType": "LITERAL",
+                    "data": "76:x000B0040E0024800000",
+                    "extension": null
+                  },
+                  "opName": "Sensor",
+                  "extension": null
+                }
+              ]
+            },
+            "statProfileNames": {
+              "statProfileName": []
+            },
+            "extension": null,
+            "name": "Sensor",
+            "reportIfEmpty": false
+          }
+        ]
+      },
+      "extension": null,
+      "any": [],
+      "schemaVersion": null,
+      "creationDate": null,
+      "includeSpecInReports": false
+    },
+    "extension": null,
+    "any": null,
+    "name": "Sensor",
+    "baseExtension": null,
+    "schemaVersion": null,
+    "creationDate": null,
+    "enable": true
+  },
+  "subscribers": [
+  {
+    "uri": "queue://etb-cc",
+    "extension": null,
+    "any": null,
+    "name": "queue://etb-cc",
+    "baseExtension": null,
+    "schemaVersion": null,
+    "creationDate": null,
+    "enable": true
+  }
+  ]
+}

@@ -1,13 +1,13 @@
-Bundle-Name: Ha-VIS Custom HARTING ETB Sensor App
-Bundle-SymbolicName: havis.custom.harting.etb.sensor
+Bundle-Name: ETB Sensor App
+Bundle-SymbolicName: havis.app.etb.sensor
 Application-Name: ETB Sensor
 Bundle-Version: 2.7.0
 Implementation-Version: 2.7
 Bundle-ManifestVersion: 2
-Bundle-Vendor: HARTING IT_SD
+Bundle-Vendor: Menucha Team <info@menucha.de>
 Havis-Bundle: 
- /OSGI-INF/havis.custom.harting.etb.sensor.properties
-Bundle-Activator: havis.custom.harting.etb.sensor.osgi.Activator
+ /OSGI-INF/havis.app.etb.sensor.properties
+Bundle-Activator: havis.app.etb.sensor.osgi.Activator
 Import-Package: 
  com.fasterxml.jackson.core,
  com.fasterxml.jackson.databind,

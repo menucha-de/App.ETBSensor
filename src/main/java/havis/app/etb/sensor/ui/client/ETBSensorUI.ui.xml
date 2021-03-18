@@ -1,0 +1,31 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:s="urn:import:havis.net.ui.shared.client"
+	xmlns:e="urn:import:havis.app.etb.sensor.ui.client">
+	<ui:with type="havis.net.ui.shared.resourcebundle.ResourceBundle" field="res"></ui:with>
+	<ui:with type="havis.app.etb.sensor.ui.resourcebundle.ConstantsResource" field="i18n" />
+	<ui:style>
+	.core-ui {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		font-size: 1.5em;
+		overflow: auto;
+	}
+	
+	.section {
+		border-bottom: 1px solid lightgrey;
+	}
+	</ui:style>
+	<g:HTMLPanel styleName="{style.core-ui}">
+		<s:BackButton text="{i18n.appHeader}" />
+		<s:ConfigurationSections>
+			<e:GraphSection name="{i18n.graphSection}" ui:field="graphSection" addStyleNames="{style.section}"/>
+			<e:ConfigSection name="{i18n.configSection}" ui:field="configSection" addStyleNames="{style.section}"/>
+		</s:ConfigurationSections>
+	</g:HTMLPanel>
+</ui:UiBinder> 

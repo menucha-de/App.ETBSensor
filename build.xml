@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="havis.custom.harting.etb.sensor" default="publish" xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:if="ant:if">
+<project name="havis.app.etb.sensor" default="publish" xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:if="ant:if">
 
 	<property file="${basedir}/build.properties" />
 
@@ -48,7 +48,7 @@
 
 	<target name="test" depends="compile" unless="${skip.test}">
 		<test>
-			<copy file="src/main/resources/deb/opt/havis-apps/conf/havis/custom/harting/etb/sensor/history.sql" todir="${build.dir.test}" />
+			<copy file="src/main/resources/deb/opt/havis-apps/conf/havis/app/etb/sensor/history.sql" todir="${build.dir.test}" />
 		</test>
 	</target>
 

@@ -9,7 +9,7 @@ HOST=$1
 ROOT=$(dirname $(realpath $0))
 
 APT=10.65.54.116
-DST=/opt/havis.custom.harting.etb
+DST=/opt/havis.app.etb
 
 scp -r $ROOT/tar/* $HOST:/
 
@@ -20,6 +20,6 @@ ln -s $DST/testd /etc/rc.d/S50testd
 ln -s ../log.txt $DST/www/log.txt
 cd $DST
 
-wget -q http://$APT/ivy/havis/custom/harting/etb/1.0/havis.custom.harting.etb.jar
+wget -q http://$APT/ivy/havis/app/etb/1.0/havis.app.etb.jar
 wget -q http://$APT/ivy/havis/util/monitor/1.0/havis.util.monitor.jar
 EOF

@@ -3,7 +3,7 @@
 NAME=httpd
 DAEMON=/usr/sbin/httpd
 PID=/run/"$NAME".pid
-ARGS="-f -h /opt/havis.custom.harting.etb/www"
+ARGS="-f -h /opt/havis.app.etb/www"
 
 case "$1" in
         start)

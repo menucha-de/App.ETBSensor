@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="urn:havis:custom:harting:etb:sensor:xsd:1"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:havis:custom:harting:etb:sensor:xsd:1"
+<xs:schema xmlns="urn:havis:app:etb:sensor:xsd:1"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:havis:app:etb:sensor:xsd:1"
 	elementFormDefault="qualified">
 
 	<xs:complexType name="HistoryEntry">

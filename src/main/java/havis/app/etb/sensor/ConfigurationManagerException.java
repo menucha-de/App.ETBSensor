@@ -1,0 +1,14 @@
+package havis.app.etb.sensor;
+
+public class ConfigurationManagerException extends Exception {
+
+	private static final long serialVersionUID = 1L;
+
+	public ConfigurationManagerException(String message, Throwable cause) {
+		super(message, cause);
+	}
+
+	public ConfigurationManagerException(Throwable cause) {
+		super(cause);
+	}
+}
